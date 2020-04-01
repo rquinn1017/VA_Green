@@ -1,30 +1,22 @@
-# CodeGig
+# TheGreenTourist
+This repository ("TheGreenTourist") is an application that gives eco-friendly tourists the opportunity to connect with eco-friendly businesses. It takes in the user's geolocation and displays multiple different businesses based on this location. 
 
-> Simple Job find app for coders. This app uses Node, Express, Sequalize (Postgres) and Handlebars.
 
-## Quick Start
+## Installation
 
-``` bash
-# Install dependencies
-npm install
+The application is deployed using github and heroku. The main pages can be opened in the browser. The user will identify a business type that they want to visit then clicking on the business will show the map and chosen destination. Finally, the user will have options in an InfoWindow to visit the attraction's website and/or obtain driving directions from their current location. 
 
-# Serve on localhost:5000
-npm start
-# Dev Server (Nodemon)
-npm run dev
-```
+## User Story
+**As an** environmentally conscious user\
+**I want** to see the environmentally businesses in my area\
+**So that** I can give business and support to businesses who value my values. 
 
-## App Info
+## Built With
+[Node.js](https://nodejs.org/en/docs/) -Backend development language\
+[Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) -Page rendering template\
+[Google Maps API](https://developers.google.com/maps/documentation) -API used for directions\
+[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) -Frontend development language and server usage
 
-### Author
+## Credits
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
-
-### Version
-
-1.0.0
-
-### License
-
-This project is licensed under the MIT License
+Joe Bailey, Nathan Olenik, and Rob Quinn created this by focusing on different parts of the overall application. Joe focused on the data entry, presentation, get commands, and tweaking the backend. Nathan developed the majority of the frontend and researched troubleshooting techniques for the backend of the application. Rob did a lot of the routing, database manipulation, and overall setup of the backend of the application. 
