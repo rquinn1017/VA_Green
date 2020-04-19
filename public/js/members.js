@@ -10,8 +10,7 @@ $(document).ready(function() {
     url: "api/companies",
   
   }).done(function (companies) {
-    console.log(companies);
-  
+      
   });
 
 });

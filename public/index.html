@@ -207,7 +207,7 @@ var checkedRows = [];
 
 $('#vaGreenTable').on('check.bs.table', function (e, row) {
   checkedRows.push({id: row.id, Facility: row.Facility, Address: row.Address, Website:row.Website, Contact: row.Contact, latitude: row.Latitude, longitude: row.Longitude});
-  // console.log(checkedRows);
+  
 });
 
 $('#vaGreenTable').on('uncheck.bs.table', function (e, row) {
@@ -216,7 +216,7 @@ $('#vaGreenTable').on('uncheck.bs.table', function (e, row) {
       checkedRows.splice(index,1);
     }
   });
-  // console.log(checkedRows);
+  
 });
 
 

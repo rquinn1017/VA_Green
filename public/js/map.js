@@ -67,7 +67,7 @@ function getCompanies(){
         },
         title: companies[i].Facility
       });
-// console.log(markers)
+
       
       infoWindows[i] = new google.maps.InfoWindow({
         content: companies[i].Facility + `<div>${companies[i].Contact}</div>` + companies[i].Address + `<br>` + webpage
@@ -101,9 +101,7 @@ function getCompany(){
         }
         webpage = `<a href="${webpage}" target="_blank">Visit Website</a>`
       }
-      console.log(lat);
-      console.log(lng);
-      console.log(checkedRows)
+    
       markers[i] = new google.maps.Marker({
         map: map,
         position: {
@@ -112,7 +110,6 @@ function getCompany(){
         },
         title: checkedRows[i].Facility
       });
-console.log(markers)
       
       infoWindows[i] = new google.maps.InfoWindow({
         content: checkedRows[i].Facility + `<div>${checkedRows[i].Contact}</div>` + checkedRows[i].Address + `<br>` + webpage
@@ -160,7 +157,7 @@ $( "#clearMap" ).click(function() {
 
 $( "#vaGreenTable" ).click(function() {
   getCompany();
-  console.log(checkedRows);
+  
   $('html, body').animate({
     scrollTop: $("#googleMap").offset().top
 }, 1000);
@@ -184,7 +181,7 @@ $( "#vaGreenTable" ).click(function() {
 //               $(this).removeClass('active'); 
 //           }).click( function(){ 
 //               document.location = $(this).attr('data-href'); 
-//               console.log("test");  
+
 //           }
 //       );
 //   });
@@ -194,7 +191,7 @@ $( "#vaGreenTable" ).click(function() {
 
 // $('#vaGreenTable').on('check.bs.table', function (e, row) {
 //   checkedRows.push({id: row.id, latitude: row.Longitude, longitude: row.Longitude});
-//   console.log(checkedRows);
+
 // });
 
 // $('#eventsTable').on('uncheck.bs.table', function (e, row) {
@@ -203,5 +200,5 @@ $( "#vaGreenTable" ).click(function() {
 //       checkedRows.splice(index,1);
 //     }
 //   });
-//   console.log(checkedRows);
+
 // });
