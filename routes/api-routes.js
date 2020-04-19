@@ -56,4 +56,17 @@ module.exports = function(app) {
     });
     
  });
+
+//  app.get("/api/company", function(req, res){
+//   db.Place.findAll({
+//     where: {
+//       id: 2
+//     }}).then(function(company){
+//     console.log(company);
+//     res.json(company);
+    
+//   });
+  
+// });
+
 };

@@ -54,22 +54,30 @@
         <h1 class="mx-auto my-0 text-uppercase">Virginia Green</h1>
         <br />
         <br />
-
-        <br />
-        <a href="#about" class="btn btn-primary js-scroll-trigger scrollButton">Virginia Green Members List</a>
+         <br />
+        <a href="#tableTop" class="btn btn-primary js-scroll-trigger scrollButton">Virginia Green Members List</a>
        <!-- <br>
        <br> -->
-        <a href="#googleMap" class="btn btn-primary js-scroll-trigger scrollButton">Virginia Green Members Map</a>
+        <a href="#googleMap" id="mapButton" class="btn btn-primary js-scroll-trigger scrollButton">Virginia Green Members Map</a>
       </div>
     </div>
   </header>
 
   <!-- About Section -->
   <section id="about" class="about-section text-center">
-    <div class="table table-container table-responsive">
-      <table data-toggle="table" data-url="api/companies" data-pagination="true" data-search="true" id="vaGreenTable">
+    <div class="table table-container table-responsive w-auto small">
+    <h2 id="tableTop">Click any row to display on the map below.</h2>
+      <table 
+      data-toggle="table" 
+      data-url="api/companies" 
+      data-pagination="true" 
+      data-search="true" 
+      id="vaGreenTable" 
+      data-click-to-select="true" 
+      data-toolbar="#toolbar">
         <thead>
           <tr>
+            <th data-field="state" data-checkbox="true"></th>
             <th data-sortable="true" data-field="Facility">Name</th>
             <th data-sortable="true" data-field="Type">Type</th>
             <th data-field="Address">Address</th>
@@ -88,11 +96,17 @@
 
   <!-- Projects Section -->
   <section id="projects" class="projects-section bg-light">
+    <br>
+    <div class="mx-auto text-center">
+    <a href="#googleMap" id="viewAll" class="btn btn-primary js-scroll-trigger scrollButton">View All Members on Map</a>
+    <a href="#googleMap" id="clearMap" class="btn btn-primary js-scroll-trigger scrollButton">Clear Map</a>
+    </div>
     <!-- <h2 class="text-white-50 mx-auto mt-2 mb-5">Map of local Eco Friendly Bussinesses</h2> -->
     <div id="googleMap" style="width:100%;height:800px;"></div>
     <br />
     <br />
     </div>
+
   </section>
 
   <!-- Signup Section -->
@@ -178,6 +192,37 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/grayscale.min.js"></script>
+
+  <script>
+    // var $table = $('#vaGreenTable')
+    // var $button = $('#selections')
+  
+    // $(function() {
+    //   $button.click(function () {
+    //     alert('getSelections: ' + JSON.stringify($table.bootstrapTable('getAllSelections')))
+    //   })
+    // })
+
+var checkedRows = [];
+
+$('#vaGreenTable').on('check.bs.table', function (e, row) {
+  checkedRows.push({id: row.id, Facility: row.Facility, Address: row.Address, Website:row.Website, Contact: row.Contact, latitude: row.Latitude, longitude: row.Longitude});
+  // console.log(checkedRows);
+});
+
+$('#vaGreenTable').on('uncheck.bs.table', function (e, row) {
+  $.each(checkedRows, function(index, value) {
+    if (value.id === row.id) {
+      checkedRows.splice(index,1);
+    }
+  });
+  // console.log(checkedRows);
+});
+
+
+  </script> 
+
+
 
 </body>
 

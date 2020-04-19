@@ -388,3 +388,7 @@ color: #3c6360 !important;
       font-size: 6px;
   }
 }
+
+#viewAll {
+  text-align: center;
+}
